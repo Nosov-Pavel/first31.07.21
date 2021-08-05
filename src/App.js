@@ -1,8 +1,10 @@
+import Footer from "./Footer";
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
+        <Footer></Footer>
         <h1>Hello PASV!</h1>
         <p>some text here</p>
 
