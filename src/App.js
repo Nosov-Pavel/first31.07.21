@@ -1,33 +1,17 @@
-import Footer from "./Footer";
+function App(){
+  let number = 5;
+  const plusOne = () => {
+    number = number + 1;
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <Footer></Footer>
-        <h1>Hello PASV!</h1>
-        <p>some text here</p>
+  }
+  return(
+      <div>
+        <h1>Use State</h1>
 
-        <h2>Subtitle</h2>
+        <p>{number}</p>
+        <button onClick={plusOne}>+1</button>
 
-        <table border={1}>
-          <tr>
-            <td>Name</td>
-            <td>Price</td>
-            <td>Count</td>
-          </tr>
-          <tr>
-            <td>Box 123</td>
-            <td>$44456</td>
-            <td>21</td>
-          </tr>
-
-
-        </table>
-
-      </header>
-    </div>
+      </div>
   );
 }
-
 export default App;
