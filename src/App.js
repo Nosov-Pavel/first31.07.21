@@ -1,19 +1,18 @@
 import {useState} from "react";
 
 function App(){
-    const [count, setCount] = useState(10)
+    const [count, setCount] = useState(108)
     const plusOne = (digit) => {
         setCount(count + digit)
     }
 
     return(
         <div>
-            <h1>Set Count</h1>
-            <p>
-                <button onClick={() => plusOne(-1)}>-1</button>
-                {count}
-                <button onClick={() => plusOne(+1)}>+1</button>
-            </p>
+            <h1>UseState</h1>
+            <button onClick={() => plusOne(-1)}>-1</button>
+            {count}
+            <button onClick={() => plusOne(1)}>+1</button>
+
         </div>
     );
 }
