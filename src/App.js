@@ -1,36 +1,28 @@
-import Column from "./Column";
+import {useState} from "react";
 
-const statuses = ['Todo', 'In Progress', 'Review']
-const tasks = [
-    {
-        id: 1,
-        name: 'Learn JS',
-        description: 'Some descr about learn JS',
-        status: 'Todo',
-        priority: 3,
-    },
-    {
-        id: 2,
-        name: 'Learn React',
-        description: 'Some descr about learn React',
-        status: 'In Progress',
-        priority: 3,
-    },
-]
+function App(){
+    const inicialCounters = [0, 0, 0];
+    const [counters,setCounters] = useState(inicialCounters);
 
-function App() {
+    const addCounter = () => {
+        const newCounters = [...counters];
+        newCounters.push(0)
+        setCounters(newCounters)
 
+    }
 
-    return (
+    return(
         <div>
-            {statuses.map(el => <div key={el}><Column status={el} tasks={tasks}/></div>)}
-
+            <button onClick={addCounter}>AddCounter</button>
+            {counters.map(el => <li>
+            <button>+</button>
+            {el}
+            <button>-</button>
+            </li>)}
         </div>
     );
 }
-
-export default App
-
+export default App;
 
 
 
