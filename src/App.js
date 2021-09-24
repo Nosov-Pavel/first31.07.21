@@ -1,32 +1,23 @@
 import {useState} from "react";
 
 function App(){
-    const iCounters = [0, 0, 0];
-    const [counters,setCounters] = useState(iCounters);
 
-    const addCounter = () => {
-        const newCounters = [...counters];
-        newCounters.push(0)
-        setCounters(newCounters)
+    const [counter, setCounter] = useState(0);
+    const matchAction = (digit) => {
+        setCounter(counter + digit)
     }
-    const delCounter = (index) => {
-        const newCounter = counters.filter((el, i) => i !== index)
-        setCounters(newCounter)
+    const reset = (digit) => {
+        setCounter(counter - counter)
     }
 
     return(
-        <div>
-            <button onClick={addCounter}>AddCounter</button>
-            {counters.map((el, i) => <li>
-            <button>+</button>
-            {el}
-            <button>-</button>
-            </li>)}
-            <button onClick={()=>delCounter(i)}>DEL</button>
+        <div className="App">
+            <h1>Use State</h1>
+
         </div>
     );
 }
-export default App;
+export default App
 
 
 
