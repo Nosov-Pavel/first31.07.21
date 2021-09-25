@@ -13,6 +13,11 @@ function App(){
     return(
         <div className="App">
             <h1>Use State</h1>
+            <p>
+                <button onClick={() => matchAction(-1)}>-1</button>
+                <span>{counter}</span>
+                <button onClick={() => matchAction(+1)}>+1</button>
+            </p>
 
         </div>
     );
