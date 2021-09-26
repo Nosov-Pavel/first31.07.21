@@ -9,15 +9,39 @@ function App(){
     const reset = (digit) => {
         setCounter(counter - counter)
     }
+    const delete1 = () => {
+
+    }
+
+    const [counters, setCounters] = useState([0, 0, 0])
+
+    const plusMinusButtonHandler = (digit,index) => {
+        const newCounters = counters.map((el, ind) => ind === index ? el + digit : el)
+    }
+
+    const reset1 = (index) => {
+        const newCounters = counters.map((el, ind) => ind === index ? 0 : el)
+        setCounters(newCounters)
+    }
+
+    function delete2(){
+        const newCounters = counters.map((el, ind) => null)
+        setCounters(newCounters)
+    }
 
     return(
         <div className="App">
             <h1>Use State</h1>
             <p>
+                <span>
                 <button onClick={() => matchAction(-1)}>-1</button>
                 <span>{counter}</span>
                 <button onClick={() => matchAction(+1)}>+1</button>
+                <button onClick={reset}>RESET</button>
+                    </span>
+                <button onClick={delete1}>Delete</button>
             </p>
+            <hr/>
 
         </div>
     );
