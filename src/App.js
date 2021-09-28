@@ -45,9 +45,22 @@ function App(){
                 <button onClick={reset}>RESET</button>
                 <button onClick={delete1}>Delete</button>
                     </span>}
-                <button onClick={open}>OPEN</button>
+                {counter === '' &&
+                <button onClick={open}>OPEN</button>}
             </p>
             <hr/>
+
+            {counters.map((el, index) =>
+               <div>
+                <button onClick={() => plusMinusButtonHandler(-1, index)}>-1</button>
+                <span>{el}</span>
+                   <button onClick={() => plusMinusButtonHandler(+1, index)}>+1</button>
+                   <button onClick={() => reset1(index)}>RESET</button>
+                   <button onClick={delete2}>DELETE</button>
+
+               </div>
+                )}
+
 
         </div>
     );
