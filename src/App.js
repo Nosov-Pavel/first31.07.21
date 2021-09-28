@@ -1,3 +1,4 @@
+import './App.css';
 import {useState} from "react";
 
 function App(){
@@ -10,6 +11,10 @@ function App(){
         setCounter(counter - counter)
     }
     const delete1 = () => {
+        setCounter('')
+    }
+    const open = () => {
+        setCounter(0)
 
     }
 
@@ -33,13 +38,14 @@ function App(){
         <div className="App">
             <h1>Use State</h1>
             <p>
-                <span>
+                { counter !== '' && <span>
                 <button onClick={() => matchAction(-1)}>-1</button>
                 <span>{counter}</span>
                 <button onClick={() => matchAction(+1)}>+1</button>
                 <button onClick={reset}>RESET</button>
-                    </span>
                 <button onClick={delete1}>Delete</button>
+                    </span>}
+                <button onClick={open}>OPEN</button>
             </p>
             <hr/>
 
