@@ -34,6 +34,12 @@ function App(){
         setCounters(newCounters)
     }
 
+    const addNewCounter = () => {
+        const newArr = [...counters, 0]
+        setCounters(newArr)
+        
+    }
+
     return(
         <div className="App">
             <h1>Use State</h1>
@@ -51,15 +57,18 @@ function App(){
             <hr/>
 
             {counters.map((el, index) =>
-               <div>
+               <div key={index}>
                 <button onClick={() => plusMinusButtonHandler(-1, index)}>-1</button>
                 <span>{el}</span>
                    <button onClick={() => plusMinusButtonHandler(+1, index)}>+1</button>
                    <button onClick={() => reset1(index)}>RESET</button>
                    <button onClick={delete2}>DELETE</button>
-
                </div>
                 )}
+              <button>DELETE ALL</button>
+
+
+            <button onClick={addNewCounter}>AddNewCounter</button>
 
 
         </div>
